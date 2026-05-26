@@ -21,6 +21,7 @@ def uniform_crossover(parent1, parent2):
     mask = [random.randint(0, 1) for _ in range(len(parent1))]
     anak1 = []
     anak2 = []
+    
     for i in range(len(parent1)):
         if mask[i] == 0:
             # Jika mask bernilai 0, ambil gen dari parent1 untuk anak1, dan parent2 untuk anak2
@@ -30,14 +31,16 @@ def uniform_crossover(parent1, parent2):
             # Jika mask bernilai 1, ambil gen dari parent2 untuk anak1, dan parent1 untuk anak2
             anak1.append(parent2[i])
             anak2.append(parent1[i])
+    
     return anak1, anak2
 
-# Contoh penggunaan
-parent1 = [1, 0, 1, 1, 0] # Contoh parent1
-parent2 = [0, 1, 0, 0, 1] # Contoh parent2
+if __name__ == "__main__":
+    # Contoh penggunaan
+    parent1 = [1, 0, 1, 1, 0] # Contoh parent1
+    parent2 = [0, 1, 0, 0, 1] # Contoh parent2
 
-anak1, anak2 = one_point_crossover(parent1, parent2)
+    anak1, anak2 = one_point_crossover(parent1, parent2)
 
-print("\nAnak Hasil Crossover:")
-print(f"Anak 1: {anak1}")
-print(f"Anak 2: {anak2}")
+    print("\nAnak Hasil Crossover:")
+    print(f"Anak 1: {anak1}")
+    print(f"Anak 2: {anak2}")
